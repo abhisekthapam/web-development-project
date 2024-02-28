@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.shadow-bottom {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.custom-scroll {
+  overflow-y: scroll;
+}
+
+.custom-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.primary-color {
+  color: #A020F0;
+}

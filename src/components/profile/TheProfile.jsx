@@ -1,9 +1,10 @@
 import React from 'react'
+import TheRegistration from '../../pages/TheRegistration'
 
 function TheProfile() {
   return (
     <div>
-      Profile
+      <TheRegistration />
     </div>
   )
 }

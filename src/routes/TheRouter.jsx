@@ -3,20 +3,24 @@ import TheNavbar from "../components/navigation/TheNavbar";
 import TheHome from "../pages/TheHome";
 import TheMenu from "../pages/TheMenu";
 import TheProfile from "../../src/components/profile/TheProfile";
-import "./TheRouter.css";
 import TheYourOrder from "../pages/TheYourOrder";
+import TheLogin from "../pages/TheLogin";
+import TheRegistration from "../pages/TheRegistration";
 
 const routes = [
   { path: "/", element: <TheHome /> },
   { path: "/menu", element: <TheMenu /> },
   { path: "/username", element: <TheProfile /> },
   { path: "/your-order", element: <TheYourOrder /> },
+  { path: "/login", element: <TheLogin /> },
+  { path: "/registration", element: <TheRegistration /> },
 ];
 
 export default function TheRouter() {
   return (
-    <div className="flex flex-col">
-        <div className="border mb-5 shadow-bottom sticky top-0 z-50 bg-white">
+    <div className="border border-black h-[100vh] custom-scroll">
+      <div className="flex flex-col">
+        <div className="border shadow-bottom sticky top-0 z-50 bg-white">
           <TheNavbar />
         </div>
       <div>
@@ -26,6 +30,7 @@ export default function TheRouter() {
           ))}
         </Routes>
       </div>
+    </div> 
     </div>
   );
 }

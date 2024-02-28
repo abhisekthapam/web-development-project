@@ -1,0 +1,130 @@
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
+import axios from "axios";
+
+const TheLogin = () => {
+  const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate();
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+  };
+
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevShowPassword) => !prevShowPassword);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!formData.email || !formData.password) {
+      setErrorMessage("All fields are required.");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
+      return;
+    }
+
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/api/login",
+        formData
+      );
+      console.log(response.data);
+      navigate("/username");
+    } catch (error) {
+      console.error("Login failed:", error.response.data);
+    }
+  };
+
+  return (
+    <div className="min-h-[88vh] bg-gray-100">
+      <div className="min-h-[70vh] flex justify-center items-center">
+        <form
+          onSubmit={handleSubmit}
+          className="bg-white p-8 rounded shadow-md w-full sm:w-96"
+        >
+          <h2 className="text-xl font-bold mb-4 text-center primary-color">
+            Login to Tokri
+          </h2>
+          <div className="mb-4">
+            <label
+              htmlFor="email"
+              className="text-xs font-medium text-gray-700"
+            >
+              Email*
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none p-1 text-xs"
+            />
+          </div>
+          <div className="mb-6 relative">
+            <label
+              htmlFor="password"
+              className="block text-xs font-medium text-gray-700"
+            >
+              Password*
+            </label>
+            <input
+              type={showPassword ? "text" : "password"}
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:outline-none text-xs p-1 pr-10"
+            />
+            {showPassword ? (
+              <PiEyeThin
+                className="absolute right-2 top-2 cursor-pointer"
+                onClick={togglePasswordVisibility}
+              />
+            ) : (
+              <PiEyeSlashThin
+                className="absolute right-2 top-2 cursor-pointer"
+                onClick={togglePasswordVisibility}
+              />
+            )}
+          </div>
+          {errorMessage && (
+            <div className="text-red-500 mb-4 text-xs">{errorMessage}</div>
+          )}
+          <div className="flex justify-center mb-4">
+            <button
+              type="submit"
+              className="primary-color px-4 py-2 rounded text-xs border border-purple-400 hover:bg-purple-100 hover:brightness-110"
+            >
+              Login
+            </button>
+          </div>
+          <div className="text-xs flex justify-center">
+            <p>
+              Don't have an account ?{" "}
+              <Link to="/registration">
+                <span className="primary-color hover:brightness-110">
+                  Sign Up
+                </span>
+              </Link>
+            </p>
+          </div>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default TheLogin;
