@@ -46,7 +46,7 @@ function TheMenu() {
     <div>
       <div>
         <div className="w-[100%] flex justify-center">
-          <div className=" flex sticky gap-10">
+          <div className=" flex sticky gap-10 mt-2">
             <button
               onClick={openModal}
               className="bg-red-500 text-white font-bold px-4 py-1 mb-5 cursor-pointer hover:bg-red-600"

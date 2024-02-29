@@ -17,7 +17,6 @@ public class RegistrationForm {
     private String phoneNumber;
     private String password;
 
-    // Constructors
     public RegistrationForm() {
     }
 
@@ -29,7 +28,6 @@ public class RegistrationForm {
         this.password = password;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }

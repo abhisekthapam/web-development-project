@@ -1,10 +1,10 @@
 import React from 'react'
-import TheRegistration from '../../pages/TheRegistration'
+import TheLogin from '../../pages/TheLogin'
 
 function TheProfile() {
   return (
     <div>
-      <TheRegistration />
+      <TheLogin />
     </div>
   )
 }

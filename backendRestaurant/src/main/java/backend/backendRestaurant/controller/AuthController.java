@@ -14,7 +14,7 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
-    @PostMapping("/login")
+    @PostMapping("/api/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         return userService.authenticate(loginRequest.getEmail(), loginRequest.getPassword());
     }
