@@ -43,19 +43,19 @@ function TheMenu() {
   }, []);
 
   return (
-    <div>
+    <div className="border border-white h-[86vh] mx-[10%] mt-3 shadow-custom-shadow ">
       <div>
         <div className="w-[100%] flex justify-center">
           <div className=" flex sticky gap-10 mt-2">
             <button
               onClick={openModal}
-              className="bg-red-500 text-white font-bold px-4 py-1 mb-5 cursor-pointer hover:bg-red-600"
+              className="primary-background rounded text-white font-bold px-4 py-1 mb-5 cursor-pointer hover:bg-red-600"
               title="Choose table number"
             >
               Choose Table No.
             </button>
             <p
-              className="bg-red-500 text-white font-bold px-4 py-1 mb-5 cursor-not-allowed"
+              className="primary-background rounded text-white font-bold px-4 py-1 mb-5 cursor-not-allowed"
               title="Selected table number"
             >
               Table - {selectedIndex !== null ? `${selectedIndex + 1}` : "None"}
@@ -70,8 +70,8 @@ function TheMenu() {
                 handleSelectedIndex={handleSelectedIndex}
               />
             </div>
-            </div>
-          )}
+          </div>
+        )}
       </div>
       {!isModalOpen && selectedIndex !== null && (
         <div>
@@ -79,6 +79,7 @@ function TheMenu() {
             setSelectedQuantity={setSelectedQuantity}
             selectedQuantity={selectedQuantity}
             setShowOrder={setShowOrder}
+            selectedTable={selectedIndex}
           />
         </div>
       )}

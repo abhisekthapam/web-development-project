@@ -54,7 +54,7 @@ export default function TheSidebar() {
         onKeyDown={(e) => handleKeyPress(e, item.title)}
         key={item.title}
         className={`flex items-center cursor-pointer focus:outline-none ${
-          activeTab === item.title ? "text-red-500" : ""
+          activeTab === item.title ? "primary-color" : "stylish-border"
         }`}
         tabIndex={0}
       >
@@ -62,8 +62,8 @@ export default function TheSidebar() {
         {!isProfile && (
           <p
             className={`${
-              activeTab === item.title ? "font-bold" : "font-semibold"
-            } ml-2`}
+              activeTab === item.title ? "font-semibold" : ""
+            }`}
           >
             {item.title}
           </p>
@@ -73,7 +73,7 @@ export default function TheSidebar() {
   };
 
   return (
-    <div className="flex justify-between p-7">
+    <div className="flex justify-between p-6">
       <div className="flex items-center w-[30%]">
         <div
           onClick={() => handleTabClick("Logo")}

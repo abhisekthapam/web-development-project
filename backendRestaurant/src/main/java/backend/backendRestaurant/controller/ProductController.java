@@ -32,10 +32,8 @@ public class ProductController {
                 return ResponseEntity.badRequest().body("Image file is required");
             }
 
-            // Generate a unique filename for the image
             String imageName = UUID.randomUUID().toString() + "_" + image.getOriginalFilename();
 
-            // Save the image file to the database
             byte[] imageData = image.getBytes();
             Product product = new Product(name, description, quantity, price, imageData, imageName);
             productService.saveProduct(product);
