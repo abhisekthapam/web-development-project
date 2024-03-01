@@ -6,7 +6,7 @@ import TheAdminAnalytics from "./admin-pages/TheAdminAnalytics";
 import TheAdminPayments from "./admin-pages/TheAdminPayments";
 import TheAdminProducts from "./admin-pages/TheAdminProducts";
 import TheAdminOrders from "./admin-pages/TheAdminOrders";
-import TheAdminEnquiry from "./admin-pages/TheAdminEnquiry";
+import TheAdminUsers from "./admin-pages/TheAdminUsers";
 import TheAdminMarketing from "./admin-pages/TheAdminMarketing";
 import TheAdminSetting from "./admin-pages/TheAdminSetting";
 import TheAdminLogout from "./admin-pages/TheAdminLogout";
@@ -20,7 +20,7 @@ function TheAdminMain() {
     { path: "/admin-payments", element: <TheAdminPayments /> },
     { path: "/admin-products", element: <TheAdminProducts /> },
     { path: "/admin-orders", element: <TheAdminOrders /> },
-    { path: "/admin-enquiry", element: <TheAdminEnquiry /> },
+    { path: "/admin-users", element: <TheAdminUsers /> },
     { path: "/admin-marketing", element: <TheAdminMarketing /> },
     { path: "/admin-setting", element: <TheAdminSetting /> },
     { path: "/admin-logout", element: <TheAdminLogout /> },

@@ -67,10 +67,10 @@ function TheAdminSidebar() {
             <li>
               <NavLink
                 className="flex items-center gap-1 px-3 p-2 rounded-md"
-                to="/admin-enquiry"
+                to="/admin-users"
               >
                 <LuContact className="text-xl -mt-1" />
-                Enquiry
+                Users
               </NavLink>
             </li>
             <li>
