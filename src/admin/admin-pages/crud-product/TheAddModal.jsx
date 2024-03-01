@@ -160,7 +160,7 @@ function TheAddModal({ closeModal }) {
             onClick={uploadImage}
             className="admin-blue hover:bg-blue-600 text-white py-2 px-4 rounded-md transition duration-300"
           >
-            Upload Image
+            Add product
           </button>
         </div>
       </div>
