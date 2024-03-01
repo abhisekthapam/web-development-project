@@ -56,6 +56,9 @@ const TheLogin = () => {
       navigate("/");
     } else {
       setErrorMessage("Invalid email or password");
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   };
 

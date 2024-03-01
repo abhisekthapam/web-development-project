@@ -141,7 +141,7 @@ function TheAdminProducts() {
                     <td className="px-6 w-36">Rs.{product.price}</td>
                     <td className="px-6 w-36">{product.quantity}</td>
                     <td className="px-6 w-44">
-                      <div className="w-[85px] h-[105px] -ml-2">
+                      <div className="w-[85px] h-[100px] -ml-2">
                         <TheImageMagnifier
                           imageUrl={`data:image/jpeg;base64,${product.image}`}
                         />

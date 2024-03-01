@@ -24,7 +24,7 @@ const TheImageMagnifier = ({ imageUrl }) => {
       }}
     >
       <img
-        className="rounded-md cursor-zoom-in object-contain"
+        className="cursor-zoom-in object-cover rounded-md"
         src={imageUrl}
         alt="Product Image"
         style={{

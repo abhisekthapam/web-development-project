@@ -72,7 +72,7 @@ function TheItems({ selectedTable }) {
         <div className="flex flex-wrap gap-4">
           {products.map((product, index) => (
             <div key={product.id} className="border w-[220px] text-xs rounded hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer">
-              <div className="border-b h-[25vh] mb-2 pointer-events-none">
+              <div className="border-b h-[25vh] mb-2 p-1 pointer-events-none">
                 <TheImageMagnifier
                   imageUrl={`data:image/jpeg;base64,${product.image}`}
                 />

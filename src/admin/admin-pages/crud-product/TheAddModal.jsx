@@ -26,7 +26,13 @@ function TheAddModal({ closeModal }) {
   };
 
   const uploadImage = async () => {
-    if (!productData.name || !productData.description || !productData.price || !productData.quantity || !selectedFile) {
+    if (
+      !productData.name ||
+      !productData.description ||
+      !productData.price ||
+      !productData.quantity ||
+      !selectedFile
+    ) {
       setErrorMessage("Please fill out all fields.");
       setErrorVisible(true);
       setTimeout(() => {
@@ -67,13 +73,15 @@ function TheAddModal({ closeModal }) {
     <div className="fixed right-[5rem] top-[3rem] z-50 overflow-y-auto flex items-center justify-center h-[90vh]">
       <div className="bg-white rounded-lg p-8 w-[50rem] shadow-md border">
         <div className="flex justify-between mb-3">
-            <p className="text-lg font-semibold">Add Product</p>
+          <p className="text-lg font-semibold">Add Product</p>
           <button onClick={closeModal} title="Close">
             <IoClose className="text-2xl" />
           </button>
         </div>
 
-        {errorVisible && <div className="text-red-500 text-sm mb-4">{errorMessage}</div>}
+        {errorVisible && (
+          <div className="text-red-500 text-sm mb-4">{errorMessage}</div>
+        )}
 
         <div className="flex flex-col md:flex-row gap-7">
           <div className="w-full">
@@ -131,13 +139,17 @@ function TheAddModal({ closeModal }) {
             </div>
           </div>
           <div className="w-full">
-            <input type="file" onChange={handleFileChange} className="text-xs" />
+            <input
+              type="file"
+              onChange={handleFileChange}
+              className="text-xs"
+            />
             {selectedFile && (
               <div className="mb-2">
                 <img
                   src={URL.createObjectURL(selectedFile)}
                   alt="Preview"
-                  className="w-[350px] h-[400px] object-contain rounded-lg"
+                  className="w-[350px] h-[400px] p-3 object-contain rounded-lg"
                 />
               </div>
             )}

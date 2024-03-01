@@ -43,7 +43,6 @@ const TheAdminDashboard = () => {
   };
 
   const fetchProducts = async () => {
-    // Dummy data for demonstration
     setProducts([
       { id: 101, name: "Product 1", price: 20, stock: 10 },
       { id: 102, name: "Product 2", price: 30, stock: 15 },
@@ -126,7 +125,7 @@ const TheAdminDashboard = () => {
                       </p>
                     </div>
                     <div>
-                      <p className="text-lg font-semibold">${order.total}</p>
+                      <p className="text-lg font-semibold">Rs.{order.total}</p>
                       <p
                         className={`text-sm font-semibold ${
                           order.status === "Delivered"
@@ -158,7 +157,7 @@ const TheAdminDashboard = () => {
                       <p className="text-sm text-gray-600">ID: {product.id}</p>
                     </div>
                     <div>
-                      <p className="text-lg font-semibold">${product.price}</p>
+                      <p className="text-lg font-semibold">Rs.{product.price}</p>
                       <p className="text-sm text-gray-600">
                         Stock: {product.stock}
                       </p>
@@ -175,8 +174,7 @@ const TheAdminDashboard = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold mb-8">Admin Dashboard</h1>
+    <div className="container px-[10%] py-[5rem]">
       <div className="grid grid-cols-2 gap-8 mb-8">
         <div className="bg-white rounded-lg shadow-md p-6">
           <h2 className="text-2xl font-bold mb-4">Revenue</h2>
