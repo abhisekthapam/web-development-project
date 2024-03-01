@@ -35,7 +35,7 @@ function TheAdminMain() {
         <div className="border-b p-2">
         <TheAdminNavbar />
         </div>
-        <div className="pl-5">
+        <div className="pl-5 h-[92vh] custom-scroll">
         <Routes>
           {routes.map(({ path, element }) => (
             <Route key={path} path={path} element={element} />

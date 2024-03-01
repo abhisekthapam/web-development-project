@@ -3,3 +3,8 @@
     font-weight: 700;
     color: #fff;
 } 
+.admin:hover {
+    background-color: #1900D5;
+    font-weight: 700;
+    color: #fff;
+}
