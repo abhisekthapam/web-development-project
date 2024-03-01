@@ -49,7 +49,7 @@ function TheMenu() {
           <div className=" flex sticky gap-10 mt-2">
             <button
               onClick={openModal}
-              className="primary-background rounded text-white font-bold px-4 py-1 mb-5 cursor-pointer hover:bg-red-600"
+              className="primary-background rounded text-white font-bold px-4 py-1 mb-5 cursor-pointer hover:brightness-125"
               title="Choose table number"
             >
               Choose Table No.

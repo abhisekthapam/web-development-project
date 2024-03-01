@@ -20,19 +20,19 @@ function TheTable({ closeModal, handleSelectedIndex }) {
   return (
     <div className="w-[100%] flex justify-center z-50">
       <div>
-        <p className="mb-5 font-bold border px-28 py-3 bg-red-500 text-white">
+        <p className="mb-5 font-bold border px-28 py-3 primary-background text-white">
           Choose Table
         </p>
         <div className="grid grid-cols-3 gap-4">
           {tableItems.map((index) => (
             <div
               key={index}
-              className={`border p-5 w-full transition-all duration-500 ease-in-out transform-gpu hover:scale-110 cursor-pointer ${
-                selectedItem === index ? "bg-red-500 text-white font-bold" : ""
+              className={`border p-5 w-full transition-all duration-500 ease-in-out transform-gpu hover:scale-110 cursor-pointer hover:bg-[#A020F0] hover:text-white hover:font-semibold  ${
+                selectedItem === index ? "bg-[#A020F0] font-bold text-white" : ""
               }`}
               onClick={() => handleItemClick(index)}
               style={{
-                transition: "background-color 0.3s, color 0.3s, transform 0.3s",
+                transition: "primary-background 0.3s, color 0.3s, transform 0.3s",
               }}
             >
               <p>Table {index + 1}</p>
@@ -42,7 +42,7 @@ function TheTable({ closeModal, handleSelectedIndex }) {
         <div className="w-[100%] flex justify-center">
           <button
             onClick={handleConfirmSelection}
-            className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 mt-5"
+            className="px-4 py-2 primary-background text-white rounded hover:primary-background mt-5"
           >
             Okay
           </button>

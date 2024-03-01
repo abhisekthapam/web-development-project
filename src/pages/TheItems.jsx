@@ -67,11 +67,11 @@ function TheItems({ selectedTable }) {
 
   return (
     <div>
-      <div className="-mt-5 h-[80vh] p-2 px-3 flex flex-col justify-between">
-        <div className="h-[72vh] custom-scroll p-4">
+      <div className="-mt-5 h-[80vh] p-2 px-3 flex flex-col justify-between relative">
+        <div className="h-[78vh] custom-scroll p-4">
         <div className="flex flex-wrap gap-4">
           {products.map((product, index) => (
-            <div key={index} className="border w-[220px] text-xs rounded hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer">
+            <div key={product.id} className="border w-[220px] text-xs rounded hover:scale-105 transition-transform duration-500 ease-in-out cursor-pointer">
               <div className="border-b h-[25vh] mb-2 pointer-events-none">
                 <TheImageMagnifier
                   imageUrl={`data:image/jpeg;base64,${product.image}`}
@@ -103,7 +103,7 @@ function TheItems({ selectedTable }) {
           ))}
         </div>
         </div>
-        <div className="flex justify-center gap-5">
+        <div className="flex justify-center gap-5 absolute right-0 -top-9">
           <button
             className="admin-border px-2 py-1 rounded-md admin-text hover:brightness-150"
             onClick={handleViewOrder}
