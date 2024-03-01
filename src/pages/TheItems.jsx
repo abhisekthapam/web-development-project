@@ -103,15 +103,15 @@ function TheItems({ selectedTable }) {
           ))}
         </div>
         </div>
-        <div className="flex justify-center gap-5 absolute right-0 -top-9">
+        <div className="flex justify-center gap-5 absolute right-9 -top-9">
           <button
-            className="admin-border px-2 py-1 rounded-md admin-text hover:brightness-150"
+            className="primary-color primary-background px-2 py-1 rounded-md hover:brightness-150"
             onClick={handleViewOrder}
           >
             View Order
           </button>
           <button
-            className="primary-border primary-color rounded-md px-2 py-1 hover:brightness-150"
+            className="primary-color primary-background rounded-md px-2 py-1 hover:brightness-150"
             onClick={handleCheckout}
           >
             Checkout
