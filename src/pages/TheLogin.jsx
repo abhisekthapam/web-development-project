@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { PiEyeThin, PiEyeSlashThin } from "react-icons/pi";
 import axios from "axios";
@@ -11,6 +11,7 @@ const TheLogin = () => {
     email: "",
     password: "",
   });
+  const [users, setUsers] = useState([]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,25 +25,37 @@ const TheLogin = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const handleSubmit = async (e) => {
+  useEffect(() => {
+    const fetchUsers = async () => {
+      try {
+        const response = await axios.get("/api/users");
+        setUsers(response.data);
+      } catch (error) {
+        console.error("Error fetching users:", error);
+      }
+    };
+
+    fetchUsers();
+  }, []);
+
+  const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!formData.email || !formData.password) {
-      setErrorMessage("All fields are required.");
-      setTimeout(() => {
-        setErrorMessage("");
-      }, 5000);
+    const { email, password } = formData;
+
+    if (email === "admin@admin" && password === "admin") {
+      navigate("/admin-dashboard");
       return;
     }
 
-    try {
-      const response = await axios.post('/api/login',
-        formData
-      );
-      console.log(response.data);
-      navigate("/username");
-    } catch (error) {
-      console.error("Login failed:", error.response.data);
+    const matchedUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (matchedUser) {
+      navigate("/");
+    } else {
+      setErrorMessage("Invalid email or password");
     }
   };
 
