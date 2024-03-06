@@ -37,7 +37,7 @@ function TheOrderViewModal({ order, closeModal }) {
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-gray-800 bg-opacity-75 z-50">
-      <div className="bg-white p-4 rounded-lg w-[1000px] h-[70vh]">
+      <div className="bg-white p-4 rounded-lg w-[1000px] h-[70vh] mx-3">
         <h2 className="text-xl font-bold mb-4 text-center primary-color">
           Order Details
         </h2>
@@ -46,24 +46,29 @@ function TheOrderViewModal({ order, closeModal }) {
             <div>
               <div className="overflow-auto max-h-[70vh] text-xs leading-6">
                 <p className="font-bold">Order ID: {order.id}</p>
-                <h3 className="text-sm font-semibold mt-2">Products:</h3>
-                <ul>
-                  {order.orderItems.map((item) => (
-                    <li key={item.id}>
-                      <div className="w-[20rem] flex">
-                        <span className="w-[40%]">
-                          Product name : {item.productName}
-                        </span>{" "}
-                        <span className="w-[20%] flex justify-center">
-                          -{" "}
-                        </span>
-                        <span className="w-[40%]">
-                          Quantity: {item.productQuantity}
-                        </span>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="text-sm font-semibold mt-2">
+                  Products :  ({order.orderItems.length}{" "}
+                  {order.orderItems.length === 1 ? "Product" : "Products"})
+                </h3>
+                <div className="h-[17vh] flex flex-col custom-scroll">
+                  <ul>
+                    {order.orderItems.map((item) => (
+                      <li key={item.id}>
+                        <div className="w-[20rem] flex">
+                          <span className="w-[40%]">
+                            Product name : {item.productName}
+                          </span>{" "}
+                          <span className="w-[20%] flex justify-center">
+                            -{" "}
+                          </span>
+                          <span className="w-[40%]">
+                            Quantity: {item.productQuantity}
+                          </span>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
                 <h3 className="text-lg font-semibold mt-1">Images:</h3>
                 <div className="flex gap-5 flex-wrap w-[265px] h-[15vh] p-1 custom-scroll">
                   {order.orderItems.map((item) => (

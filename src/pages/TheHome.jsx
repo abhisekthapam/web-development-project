@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import TheFooter from "./TheFooter";
 
 function TheHome() {
   return (
@@ -44,7 +45,7 @@ function TheHome() {
             <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-white sm:text-4xl">
               Ready to order?
             </p>
-            <div className="mt-4">
+            <div className="mt-4 flex justify-center sm:text-center">
               <Link to="/menu">
                 <span className="inline-block primary-background py-2 px-6 border border-transparent rounded-md text-base font-medium text-white hover:brightness-125">
                   Explore Menu
@@ -53,6 +54,9 @@ function TheHome() {
             </div>
           </div>
         </div>
+      </div>
+      <div className="lg:hidden md:hidden">
+        <TheFooter />
       </div>
     </div>
   );

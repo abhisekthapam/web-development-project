@@ -86,7 +86,7 @@ const TheRegistration = () => {
     <div className="min-h-[88vh] flex justify-center items-center bg-gray-100">
       <form
         onSubmit={handleSubmit}
-        className="bg-white p-8 rounded shadow-md w-full sm:w-96"
+        className="bg-white p-8 rounded shadow-md w-full sm:w-96 mx-3"
       >
         <p className="text-xl font-bold mb-4 text-center primary-color">
           Create Tokri Acoount

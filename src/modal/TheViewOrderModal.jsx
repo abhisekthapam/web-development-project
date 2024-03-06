@@ -19,7 +19,7 @@ function TheViewOrderModal({ products, selectedTable, closeModal }) {
       className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-50 z-50"
       onClick={handleOutsideClick}
     >
-      <div className="bg-white rounded-lg p-8 max-w-md w-full h-[70vh]">
+      <div className="bg-white rounded-lg p-8 max-w-md w-full h-[70vh] mx-3">
         <span
           className="absolute top-2 right-2 text-gray-500 cursor-pointer"
           onClick={closeModal}

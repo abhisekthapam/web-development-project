@@ -64,7 +64,7 @@ const TheLogin = () => {
 
   return (
     <div className="min-h-[88vh] bg-gray-100">
-      <div className="min-h-[70vh] flex justify-center items-center">
+      <div className="min-h-[70vh] flex justify-center items-center mx-3">
         <form
           onSubmit={handleSubmit}
           className="bg-white p-8 rounded shadow-md w-full sm:w-96"
